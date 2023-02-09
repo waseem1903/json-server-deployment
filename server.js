@@ -12,11 +12,6 @@ server.use(jsonServer.rewriter({
     '/blog/:resource/:id/show': '/:resource/:id'
 }))
 server.use(router)
-router.render = (req, res) => {
-    res.status(500).jsonp({
-        error: "error message here"
-    })
-}
 server.listen(3001, () => {
     console.log('JSON Server is running')
 })
